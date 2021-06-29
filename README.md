@@ -5,7 +5,7 @@
 3. Partition the disk
 4. Format the partitions
 5. Mount the partitions
-6. Install the base packages into /mnt (pacstrap /mnt base linux linux-firmware git vim intel-ucode (or amd-ucode))
+6. Install the base packages into /mnt pacstrap /mnt base base-devel linux linux-firmware git vim intel-ucode (or amd-ucode)
 7. Generate the FSTAB file with genfstab -U /mnt >> /mnt/etc/FSTAB
 8. Chroot in with arch-chroot /mnt
 9. Download the git repository with git clone https://github.com/Michail-Sergievsky/arch_install.git
