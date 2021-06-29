@@ -1,6 +1,6 @@
 #!/bin/bash
 
-xdg-user-dirs-update
+# xdg-user-dirs-update
 
 mkdir -p Pictures/{Wall_use,screenshots,IMAGES_COPIED,IMAGES_SELECTED 
 mkdir -p Download/{t_done,t_work,comics}
