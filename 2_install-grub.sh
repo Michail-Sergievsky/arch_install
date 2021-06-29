@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pacman -Sy
+
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc
 sed -i '177s/.//' /etc/locale.gen
