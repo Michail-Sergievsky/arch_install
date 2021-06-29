@@ -8,10 +8,10 @@
 6. Install the base packages into /mnt (pacstrap /mnt base linux linux-firmware git vim intel-ucode (or amd-ucode))
 7. Generate the FSTAB file with genfstab -U /mnt >> /mnt/etc/FSTAB
 8. Chroot in with arch-chroot /mnt
-9. Download the git repository with git clone https://gitlab.com/eflinux/arch-basic
-10. cd arch-basic
-11. chmod +x install-uefi.sh
-12. run with ./install-uefi.sh
+9. Download the git repository with git clone https://github.com/Michail-Sergievsky/arch_install.git
+10. cd arch-install
+11. chmod +x xxxx.sh
+12. run with ./xxxx.sh
 
 # Add to script
 sudo pacman -S --noconfirm xorg
