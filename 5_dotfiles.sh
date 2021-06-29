@@ -1,3 +1,6 @@
+#!/bin/bash
+#launch from $HOME
+
 git clone --bare https://github.com/Michail-Sergievsky/dotfiles.git $HOME/.myconf
 function config {
    /usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME $@
@@ -12,5 +15,3 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
-
-echo "alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'" >> .bash_aliases

@@ -1,4 +1,6 @@
 #!/bin/bash
+mkdir -p /etc/pacman.d/hooks/clean.package_cache.hook
+touch /etc/pacman.d/hooks/clean.package_cache.hook
 echo "[Trigger]" >> /etc/pacman.d/hooks/clean.package_cache.hook
 echo "Operation = Upgrade" >> /etc/pacman.d/hooks/clean.package_cache.hook
 echo "Operation = Install" >> /etc/pacman.d/hooks/clean.package_cache.hook
