@@ -1,5 +1,5 @@
 #!/bin/bash
-#launch from $HOME
+#LAUNCH FROM $HOME!!!!
 
 git clone --bare https://github.com/Michail-Sergievsky/dotfiles.git $HOME/.myconf
 function config {

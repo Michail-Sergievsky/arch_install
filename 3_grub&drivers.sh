@@ -20,14 +20,11 @@ pacman -S networkmanager network-manager-applet dhclient
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 # pacman -S --noconfirm xf86-video-intel
 
+#network
 systemctl enable NetworkManager
 #notebook
 systemctl enable bluetooth
 systemctl enable tlp
-#for ssd
-systemctl enable fstrim.timer
-
-reflector -c Russia -a 7 --sort rate --save /etc/pacman.d/mirrorlist
 
 useradd -m freeman
 echo freeman:password | chpasswd
@@ -35,4 +32,4 @@ usermod -aG freeman freeman
 
 echo "freeman ALL=(ALL) ALL" >> /etc/sudoers.d/freeman
 
-printf "\e[1;32mYay+Polybar\e[0m"
+printf "\e[1;32m NOW LOGOUT FROM CHROOT, reboot\e[0m"
