@@ -1,5 +1,4 @@
 # Arch Basic Install Commands-Script
-
 1. If needed, load your keymap
 2. Refresh the servers with pacman -Syy
 3. Partition the disk
@@ -12,6 +11,5 @@
 10. cd arch-install
 11. chmod +x xxxx.sh
 12. run with ./xxxx.sh
-
 # Add to script
 sudo pacman -S --noconfirm xorg
