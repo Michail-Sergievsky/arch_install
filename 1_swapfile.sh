@@ -1,8 +1,10 @@
 #!/bin/bash
 cd /
 touch swapfile
+
 #change size
 dd if=/dev/zero of=swapfile bs=1G count=8 status=progress
+
 chmod 600 swapfile
 mkswap /swapfile
 swapon /swapfile
