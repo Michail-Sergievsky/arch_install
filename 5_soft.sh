@@ -20,6 +20,9 @@ yay -S urxvt-resize-font-git nerd-fonts-source-code-pro siji-git ttf-weather-ico
 #soft yay
 yay -S zoom skypeforlinux-stable-bin transgui-gtk zoom hunspell-ru hyphen-ru libreoffice-extension-languagetool freac
 
+# CyberPower UPS daemon
+yay -S powerpanel
+
 sudo pkgfile -u
 
 sudo systemctl enable cups.service
@@ -33,5 +36,7 @@ sudo systemctl enable ly.service
 #for ssd
 sudo systemctl enable fstrim.service
 sudo systemctl enable fstrim.timer
+#CyberPower UPS
+sudo systemctl enable pwrstatd
 
 printf "\e[1;32mNow dotfiles\e[0m"
