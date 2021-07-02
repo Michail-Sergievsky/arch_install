@@ -9,13 +9,16 @@ sudo pacman -S --needed  xorg-server xorg-docs xorg-apps xorg-xinit rxvt-unicode
 # for ssd
 sudo pacman -S util-linux
 
+# for ntfs filesystem
+sudo pacman -S ntfs-3g
+
 # soft pacman
 sudo pacman -S --needed zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps cmus opusfile foliate libreoffice-fresh libreoffice-fresh-ru hunspell-en_us hyphen-en vlc anki firefox flatpak mediainfo mediainfo-gui mkvtoolnix-gui mp3info pinta qbittorrent soundconverter sxiv exiv2 discord goldendict jre8-openjdk aegisub mcomix mupdf-tools unrar p7zip lhasa
 
 pip install tasklib
 
 # system
-yay -S urxvt-resize-font-git nerd-fonts-source-code-pro siji-git ttf-weather-icons ttf-ms-fonts ly rofi-dmenu rofi-blezz rofi-greenclip simple-mtpfs dumptorrent hibernator
+yay -S urxvt-resize-font-git nerd-fonts-source-code-pro siji-git ttf-weather-icons ttf-ms-fonts ly rofi-dmenu rofi-blezz rofi-greenclip simple-mtpfs dumptorrent hibernator update-grub
 
 #soft yay
 yay -S zoom skypeforlinux-stable-bin transgui-gtk zoom hunspell-ru hyphen-ru libreoffice-extension-languagetool freac
