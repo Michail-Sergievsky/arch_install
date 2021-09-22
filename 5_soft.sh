@@ -4,10 +4,10 @@ sudo pacman -S reflector
 reflector -c Russia -a 7 --sort rate --save /etc/pacman.d/mirrorlist
 
 #for system
-sudo pacman -S --needed  xorg-server xorg-docs xorg-apps xorg-xinit rxvt-unicode urxvt-perls rxvt-unicode-terminfo pkgfile i3-wm i3-wm i3lock i3status i3blocks arandr feh sbxkb ttf-droid noto-fonts-emoji ttf-liberation gvim jq python-pip task timew picom rofi vifm atool alsa-utils pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulsemixer lib32-libpulse lib32-alsa-plugins udisks2 udiskie fzf fd flameshot speedtest-cli sbxkb xorg-setxkbmap telegram-desktop lxqt-policykit papirus-icon-theme libqalculate cifs-utils cmake htop ntfs-3g redshift tree ueberzug wget xclip bash-completion dhcpcd lsscsi man-pages tldr w3m avahi xorg-xprop neofetch pacman-contrib xdg-user-dirs rsync cups zip parted unzip
+sudo pacman -S alsa-utils arandr atool avahi bash-completion cifs-utils cmake cups dhcpcd fd feh flameshot fzf gvim htop i3-wm i3blocks i3lock i3status jq lib32-alsa-plugins lib32-libpulse libqalculate lsscsi lxqt-policykit man-pages neofetch noto-fonts-emoji ntfs-3g pacman-contrib papirus-icon-theme parted picom pkgfile pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulsemixer python-pip redshift rofi rsync rxvt-unicode rxvt-unicode-terminfo sbxkb speedtest-cli task telegram-desktop timew tldr tree ttf-droid ttf-liberation udiskie udisks2 ueberzug unzip urxvt-perls vifm w3m wget xclip xdg-user-dirs xorg-apps xorg-docs xorg-server xorg-setxkbmap xorg-xinit xorg-xprop zip
 
 #for CD-DVDROM
-sudo pacman -S --needed cdrtools dvd+rw-tools ccd2iso
+sudo pacman -S cdrtools dvd+rw-tools ccd2iso
 
 # for ssd
 sudo pacman -S util-linux
@@ -16,15 +16,15 @@ sudo pacman -S util-linux
 sudo pacman -S ntfs-3g
 
 # soft pacman
-sudo pacman -S --needed zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps cmus opusfile foliate libreoffice-fresh libreoffice-fresh-ru hunspell-en_us hyphen-en vlc anki firefox flatpak mediainfo mediainfo-gui mkvtoolnix-gui mp3info pinta qbittorrent soundconverter sxiv exiv2 discord goldendict jre8-openjdk aegisub mcomix mupdf-tools unrar p7zip lhasa
+sudo pacman -S aegisub anki cmus discord exiv2 flatpak foliate goldendict hunspell-en_us hyphen-en jre8-openjdk lhasa libreoffice-fresh libreoffice-fresh-ru mcomix mediainfo mediainfo-gui mkvtoolnix-gui mp3info mupdf-tools opusfile p7zip pinta qbittorrent soundconverter sxiv vlc zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps 
 
 pip install tasklib
 
 # system
-yay -S urxvt-resize-font-git nerd-fonts-source-code-pro siji-git ttf-weather-icons ttf-ms-fonts ly rofi-dmenu rofi-blezz rofi-greenclip simple-mtpfs dumptorrent hibernator update-grub
+yay -S dumptorrent hibernator ly nerd-fonts-source-code-pro rofi-blezz rofi-dmenu rofi-greenclip siji-git simple-mtpfs ttf-ms-fonts ttf-weather-icons update-grub urxvt-resize-font-git
 
 #soft yay
-yay -S zoom skypeforlinux-stable-bin transgui-gtk zoom hunspell-ru hyphen-ru libreoffice-extension-languagetool freac
+yay -S freac hunspell-ru hyphen-ru libreoffice-extension-languagetool skypeforlinux-stable-bin transgui-gtk zoom
 
 # CyberPower UPS daemon
 yay -S powerpanel
