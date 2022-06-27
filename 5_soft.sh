@@ -1,37 +1,37 @@
 #!/bin/bash
 
-sudo pacman -S reflector 
+sudo pacman -S --needed reflector 
 reflector -c Russia -a 7 --sort rate --save /etc/pacman.d/mirrorlist
 
 #for system
-sudo pacman -S alsa-utils arandr atool avahi bash-completion cifs-utils cmake cups dhcpcd fd feh flameshot fzf gvim htop i3-wm i3blocks i3lock i3status jq lib32-alsa-plugins lib32-libpulse libqalculate lsscsi lxqt-policykit man-pages neofetch noto-fonts-emoji ntfs-3g pacman-contrib papirus-icon-theme parted pavucontrol picom pkgfile pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulsemixer python-pip redshift rofi rsync rxvt-unicode rxvt-unicode-terminfo sbxkb speedtest-cli task telegram-desktop timew tldr tree ttf-droid ttf-liberation udiskie udisks2 ueberzug unzip urxvt-perls vifm w3m wget wireguard-tools xclip xdg-user-dirs xorg-apps xorg-docs xorg-server xorg-setxkbmap xorg-xinit xorg-xprop zip
+sudo pacman -S --needed alsa-utils arandr atool avahi bash-completion cifs-utils cmake cups dhcpcd fd feh flameshot fzf gvim htop i3-wm i3blocks i3lock i3status jq lib32-alsa-plugins lib32-libpulse libqalculate lsscsi lxqt-policykit man-pages neofetch noto-fonts-emoji ntfs-3g openvpn pacman-contrib papirus-icon-theme parted pavucontrol picom pkgfile pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulsemixer python-pip redshift rofi rsync rxvt-unicode rxvt-unicode-terminfo sbxkb speedtest-cli task telegram-desktop timew tldr tree ttf-droid ttf-liberation udiskie udisks2 ueberzug unzip urxvt-perls vifm w3m wget wireguard-tools xclip xdg-user-dirs xorg-apps xorg-docs xorg-server xorg-setxkbmap xorg-xinit xorg-xprop zip networkmanager-pptp networkmanager-openvpn networkmanager-openconnect networkmanager-l2tp network-manager-sstp rpm-tools nfs-utils
 
 #for CD-DVDROM
-sudo pacman -S cdrtools dvd+rw-tools ccd2iso
+sudo pacman -S --needed cdrtools dvd+rw-tools ccd2iso
 
 # for ssd
-sudo pacman -S util-linux
+sudo pacman -S --needed util-linux
 
 # for ntfs filesystem
-sudo pacman -S ntfs-3g
+sudo pacman -S --needed ntfs-3g
 
 # system yay
-yay -S dumptorrent hibernator ly nerd-fonts-source-code-pro rofi-blezz rofi-dmenu rofi-greenclip siji-git simple-mtpfs ttf-ms-fonts ttf-weather-icons update-grub urxvt-resize-font-git
+yay -S --needed dumptorrent hibernator ly nerd-fonts-source-code-pro rofi-blezz rofi-dmenu rofi-greenclip siji-git simple-mtpfs ttf-ms-fonts ttf-weather-icons update-grub urxvt-resize-font-git
 
 # soft pacman
-sudo pacman -S aegisub cmus discord exiv2 flatpak ffmpeg foliate goldendict hunspell-en_us hyphen-en jre8-openjdk lhasa libreoffice-fresh libreoffice-fresh-ru mcomix mediainfo mediainfo-gui mkvtoolnix-gui mp3info mupdf-tools opusfile p7zip pinta qbittorrent soundconverter sxiv vlc zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps 
+sudo pacman -S --needed aegisub cmus discord exiv2 flatpak ffmpeg foliate hunspell-en_us hyphen-en jre8-openjdk lhasa libreoffice-fresh libreoffice-fresh-ru mediainfo mediainfo-gui mkvtoolnix-gui mp3info mupdf-tools opusfile p7zip pinta qbittorrent soundconverter sxiv vlc zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps 
 
-pip install tasklib ffmpeg-normalize
+pip install ffmpeg-normalize
 
 #soft yay
-yay -S freac dropbox hunspell-ru hyphen-ru libreoffice-extension-languagetool skypeforlinux-stable-bin transgui-gtk zoom anki
+yay -S --needed freac dropbox hunspell-ru hyphen-ru libreoffice-extension-languagetool transgui-gtk zoom anki goldendict-git mcomix
 
 # soft work
-sudo pacman remmina wireshark-cli wireshark-qt vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch thunderbird
-yay -S google-chrome rocketchat-client-bin 
+sudo pacman -S --needed remmina wireshark-cli wireshark-qt vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch thunderbird
+yay -S --needed google-chrome rocketchat-client-bin 
 
 # CyberPower UPS daemon
-yay -S powerpanel
+yay -S --needed powerpanel
 
 sudo pkgfile -u
 

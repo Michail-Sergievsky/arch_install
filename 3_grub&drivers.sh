@@ -26,10 +26,10 @@ systemctl enable NetworkManager
 systemctl enable bluetooth
 systemctl enable tlp
 
+#user
 useradd -m freeman
 echo freeman:password | chpasswd
 usermod -aG freeman freeman
-
 echo "freeman ALL=(ALL) ALL" >> /etc/sudoers.d/freeman
 
 printf "\e[1;32m NOW LOGOUT FROM CHROOT, reboot\e[0m"
