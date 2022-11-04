@@ -3,9 +3,11 @@
 #update pacman
 pacman -Sy
 
-#language
+#time
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc
+timedatectl set-ntp true
+#language
 sed -i '177s/.//' /etc/locale.gen
 sed -i '403s/.//' /etc/locale.gen
 locale-gen
