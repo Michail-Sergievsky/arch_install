@@ -17,3 +17,10 @@ sudo sed -i 's/colorscheme solarized-light-256 Default-256 Default/" colorscheme
 sudo sed -i 's/" colorscheme solarized-light-256-r.vifm/colorscheme solarized-light-256-r.vifm/' /root/.config/vifm/vifmrc 
 sudo mkdir -p /run/media/freeman
 ln -s /run/media/freeman ~/Mounted
+
+
+#setup git bare dotfiles repository
+config config user.email "mikhail.sergiev@gmail.com"
+config config user.name "Michail-Sergievsky"
+config remote set-url origin git@github.com:Michail-Sergievsky/dotfiles.git
+config push --set-upstream origin main
