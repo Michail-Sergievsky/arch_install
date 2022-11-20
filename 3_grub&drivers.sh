@@ -18,7 +18,8 @@ pacman -S networkmanager network-manager-applet dhclient
 # Video drivers
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
-# pacman -S --noconfirm xf86-video-intel
+# pacman -S --noconfirm xf86-video-intel = NOT RECOMENDED!
+# pacman -S --noconfirm mesa lib32-mesa
 
 #network
 systemctl enable NetworkManager
