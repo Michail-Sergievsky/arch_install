@@ -6,11 +6,11 @@ pacman -Sy
 #time
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc
-#language
-sed -i '177s/.//' /etc/locale.gen
-sed -i '403s/.//' /etc/locale.gen
-sed -i '302s/.//' /etc/locale.gen
-locale-gen
+#language - FIX!!!!
+# sed -i '177s/.//' /etc/locale.gen
+# sed -i '403s/.//' /etc/locale.gen
+# sed -i '302s/.//' /etc/locale.gen
+# locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 #hostname
 echo "arch" >> /etc/hostname
