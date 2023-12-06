@@ -6,13 +6,13 @@ pacman -Sy
 #time
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc
-#language - FIX!!!!
-# sed -i '177s/.//' /etc/locale.gen
-# sed -i '403s/.//' /etc/locale.gen
-# sed -i '302s/.//' /etc/locale.gen
-# locale-gen
+#language
+sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/#ja_JP.UTF-8 UTF-8/ja_JP.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
+locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-#hostname
+#hostname - CHANGE when installing!
 echo "arch" >> /etc/hostname
 #hosts
 echo "127.0.0.1 localhost" >> /etc/hosts
