@@ -18,8 +18,10 @@ echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
-#root user
-echo root:password | chpasswd
+# root user - TEST openssl
+usermod --password $(openssl passwd password) root
+# TEST!!! not work under user (in arch)
+# echo root:password | chpasswd
 
 #uefi
 pacman -S --noconfirm grub efibootmgr efivar

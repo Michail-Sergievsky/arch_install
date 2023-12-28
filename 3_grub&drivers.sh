@@ -28,9 +28,14 @@ systemctl enable bluetooth
 systemctl enable tlp
 
 #user - change username!!!!!!!!
-useradd -m user
-echo user:password | chpasswd
-usermod -aG user user
-echo "user ALL=(ALL) ALL" >> /etc/sudoers.d/user
+USER=username
+GROUP="${USER}"
+PASSWORD="${USER}"
+useradd -m -s /bin/bash "${USER}"
+# echo "${USER}":password | chpasswd
+# test if archiso have opensss!
+usermod --password $(openssl passwd "${PASSWORD}") "${USER}"
+usermod -aG "${GROUP}" "${USER}"
+echo "%${USER} ALL=(ALL) NOPASSWD: ALL" > "/etc/sudoers.d/${USER}"
 
 printf "\e[1;32m NOW LOGOUT FROM CHROOT, reboot\e[0m"
