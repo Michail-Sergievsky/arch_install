@@ -15,11 +15,29 @@ pacman -S networkmanager network-manager-applet dhclient
 #Notebook
 # pacman -S bluez bluez-utils tlp
 
-# Video drivers
+# VIDEO DRIVERS
+# ATI
+# moder ati
 # pacman -S --noconfirm xf86-video-amdgpu
-# pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
-# pacman -S --noconfirm xf86-video-intel = NOT RECOMENDED!
+# old ati
+# pacman -S --noconfirm xf86-video-ati
+# OpenGL
 # pacman -S --noconfirm mesa lib32-mesa
+# Vulkan
+# pacman -S --noconfirm vulkan-radeon lib32-vulkan-radeon 
+
+# NVIDA
+# nvida proprietary
+# pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
+# nvida open source
+# pacman -S --noconfirm xf86-video-nouveau mesa lib32-mesa
+
+# INTEL
+# pacman -S --noconfirm xf86-video-intel = NOT RECOMENDED!
+# insted just install this
+# pacman -S --noconfirm mesa lib32-mesa
+# pacman -S --noconfirm vulkan-intal lib32-vulkan-intel
+
 
 #network
 systemctl enable NetworkManager

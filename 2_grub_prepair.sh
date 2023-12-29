@@ -13,11 +13,12 @@ sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 #hostname - CHANGE when installing!
-echo "arch" >> /etc/hostname
+HOST=hostname
+echo "${HOST}" >> /etc/hostname
 #hosts
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
+echo "127.0.1.1 "${HOST}".localdomain "${HOST}"" >> /etc/hosts
 # root user - TEST openssl
 usermod --password $(openssl passwd password) root
 # TEST!!! not work under user (in arch)
