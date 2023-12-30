@@ -10,13 +10,14 @@ mkdir -p $HOME/Soft
 mkdir -p $HOME/Stuff
 mkdir -p $HOME/Temp
 mkdir -p $HOME/.vim/undodir
-sudo cp -r /home/freeman/.vim /root/
+sudo cp -r $HOME/.vim /root/
 sudo mkdir -p /root/.config
-sudo cp -r /home/freeman/.config/vifm /root/.config/
+sudo cp -r $HOME/.config/vifm /root/.config/
 sudo sed -i 's/colorscheme solarized-light-256 Default-256 Default/" colorscheme solarized-light-256 Default-256 Default/' /root/.config/vifm/vifmrc 
 sudo sed -i 's/" colorscheme solarized-light-256-r.vifm/colorscheme solarized-light-256-r.vifm/' /root/.config/vifm/vifmrc 
-sudo mkdir -p /run/media/freeman
-sudo ln -s /run/media/freeman ~/Mounted
+user=$(echo $HOME | awk -F'/' '{print $3}')
+sudo mkdir -p /run/media/"$user"
+sudo ln -s /run/media/"$user" ~/Mounted
 
 
 #setup git bare dotfiles repository
