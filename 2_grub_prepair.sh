@@ -1,17 +1,15 @@
 #!/bin/bash
-
-#update pacman
-pacman -Sy
-
 #time
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock --systohc
+
 #language
 sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 sed -i 's/#ja_JP.UTF-8 UTF-8/ja_JP.UTF-8 UTF-8/' /etc/locale.gen
 sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
 #hostname - CHANGE when installing!
 HOST=hostname
 echo "${HOST}" >> /etc/hostname
@@ -24,6 +22,8 @@ usermod --password $(openssl passwd password) root
 # TEST!!! not work under user (in arch)
 # echo root:password | chpasswd
 
+#update pacman
+pacman -Sy
 #uefi
 pacman -S --noconfirm grub efibootmgr efivar
 #mbr

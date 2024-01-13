@@ -3,6 +3,9 @@
 # GRUB
 # uefi
 # check efi-directory!!!!
+# WRITE how mount it in system
+# /boot/efi/EFI/GRUB/grubx64.efi - MPC
+# /boot/EFI/GRUB/grubx64.efi - notebook
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 # mbr (GPT with BIOS)

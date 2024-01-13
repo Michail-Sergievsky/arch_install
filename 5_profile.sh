@@ -1,7 +1,24 @@
 #!/bin/bash
+# Copy dotfiles
+#LAUNCH FROM $HOME!!!!
 
+git clone --bare https://github.com/Michail-Sergievsky/dotfiles.git $HOME/.myconf
+function config {
+   /usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME $@
+}
+# mkdir -p .config-backup
+# config checkout
+# if [ $? = 0 ]; then
+#   echo "Checked out config.";
+#   else
+#     echo "Backing up pre-existing dot files.";
+#     config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+# fi;
+config checkout
+config config status.showUntrackedFiles no
+
+# HOME dirs
 # xdg-user-dirs-update
-
 mkdir -p $HOME/Downloads/{t_done,t_work,comics}
 mkdir -p $HOME/Git
 mkdir -p $HOME/Media
@@ -18,7 +35,6 @@ sudo sed -i 's/" colorscheme solarized-light-256-r.vifm/colorscheme solarized-li
 user=$(echo $HOME | awk -F'/' '{print $3}')
 sudo mkdir -p /run/media/"$user"
 sudo ln -s /run/media/"$user" ~/Mounted
-
 
 #setup git bare dotfiles repository
 function config {
