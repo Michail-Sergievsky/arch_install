@@ -2,6 +2,9 @@
 # Copy dotfiles
 #LAUNCH FROM $HOME!!!!
 
+rm -rf $HOME/.bashrc
+rm -rf $HOME/.bash_profile
+rm -rf $HOME/.bash_logout
 git clone --bare https://github.com/Michail-Sergievsky/dotfiles.git $HOME/.myconf
 function config {
    /usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME $@
@@ -27,6 +30,7 @@ mkdir -p $HOME/Soft
 mkdir -p $HOME/Stuff
 mkdir -p $HOME/Temp
 mkdir -p $HOME/.vim/undodir
+vim +PlugUpgrade +PlugUpdate +qall
 sudo cp -r $HOME/.vim /root/
 sudo mkdir -p /root/.config
 sudo cp -r $HOME/.config/vifm /root/.config/

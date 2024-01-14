@@ -19,6 +19,7 @@ yay -S --needed polybar dumptorrent hibernator ly nerd-fonts-source-code-pro rof
 sudo pacman -S --needed adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts otf-ipafont otf-ipaexfont otf-ipaexfont noto-fonts-emoji 
 yay -S --needed nerd-fonts-sf-mono ttf-ms-fonts ttf-weather-icons 
 
+#CHECK MORE!!!
 pip install ffmpeg-normalize
 
 # for CD-DVDROM
@@ -42,19 +43,19 @@ yay -S --needed powerpanel
 
 sudo pkgfile -u
 
-systemctl --user enable greenclip.service
-sudo systemctl enable cups.service
-sudo systemctl enable sshd
-sudo systemctl enable avahi-daemon
-sudo systemctl enable reflector.timer
-sudo systemctl enable reflector.service
-sudo systemctl enable pkgfile-update.timer
-sudo systemctl enable ly.service
+systemctl --user enable --now greenclip.service
+sudo systemctl enable --now cups.service
+sudo systemctl enable --now sshd
+sudo systemctl enable --now avahi-daemon
+sudo systemctl enable --now reflector.timer
+sudo systemctl enable --now reflector.service
+sudo systemctl enable --now pkgfile-update.timer
+sudo systemctl enable --now ly.service
 sudo timedatectl set-ntp true
 #for ssd
-sudo systemctl enable fstrim.service
-sudo systemctl enable fstrim.timer
+sudo systemctl enable --now fstrim.service
+sudo systemctl enable --now fstrim.timer
 #CyberPower UPS
-sudo systemctl enable pwrstatd
+sudo systemctl enable --now pwrstatd
 
 printf "\e[1;32mNow dotfiles\e[0m"
