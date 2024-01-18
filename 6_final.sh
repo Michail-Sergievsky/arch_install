@@ -1,4 +1,7 @@
 #!/bin/bash
+#Exclude mount point from locate DB
+sudo echo 'PRUNEPATHS = "/run/media"' >> /etc/updatedb.conf
+
 #copy skel
 sudo cp -r /arch_install/files/skel/.bash_logout /etc/skel
 sudo cp -r /arch_install/files/skel/.bash_profile /etc/skel
