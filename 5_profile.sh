@@ -23,7 +23,7 @@ mkdir -p $HOME/Stuff
 mkdir -p $HOME/Temp
 mkdir -p $HOME/.vim/undodir
 #vim setup
-vim +PlugUpgrade +PlugUpdate +qall
+vim +PlugUpgrade +PlugUpdate +helptags ALL +qall
 sudo cp -r $HOME/.vim /root/
 sudo mkdir -p /root/.config
 #vifm setup
