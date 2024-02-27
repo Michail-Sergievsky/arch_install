@@ -13,14 +13,14 @@ cd ..
 rm -rf yay
 
 # yay soft
-yay -S --needed polybar dumptorrent hibernator ly nerd-fonts-source-code-pro rofi-blezz rofi-dmenu rofi-greenclip siji-git simple-mtpfs ttf-ms-fonts ttf-weather-icons update-grub urxvt-resize-font-git freac dropbox hunspell-ru hyphen-ru libreoffice-extension-languagetool transgui-gtk zoom anki goldendict-ng mcomix downgrade skypeforlinux-stable-bin pacman-cleanup-hook icons-in-terminal-git epub-thumbnailer-git fontpreview
+yay -S --needed polybar dumptorrent hibernator ly nerd-fonts-source-code-pro rofi-blezz rofi-dmenu rofi-greenclip siji-git simple-mtpfs ttf-ms-fonts ttf-weather-icons update-grub urxvt-resize-font-git freac dropbox hunspell-ru hyphen-ru libreoffice-extension-languagetool transgui-gtk zoom anki goldendict-ng mcomix downgrade skypeforlinux-stable-bin pacman-cleanup-hook icons-in-terminal-git epub-thumbnailer-git fontpreview i3-gnome-pomodoro-git
 
 #fonts
 sudo pacman -S --needed adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts otf-ipafont otf-ipaexfont otf-ipaexfont noto-fonts-emoji powerline-fonts
 yay -S --needed nerd-fonts-sf-mono ttf-ms-fonts ttf-weather-icons 
 
 #python packages install
-pipx install ffmpeg-normalize
+pipx install ffmpeg-normalize shell-gpt llm
 
 # for CD-DVDROM
 # sudo pacman -S --needed cdrtools dvd+rw-tools ccd2iso
