@@ -20,6 +20,10 @@ ssh-keygen -b 2048 -t rsa -f /home/"$user"/.ssh/sshkey -q -N ""
 # move pacman hooks
 sudo mkdir -p /etc/pacman.d/hooks/
 sudo cp -r /arch_install/files/pacman-cache-cleanup.hook /etc/pacman.d/hooks/
-# add media to fstab
+#copy backup_private_files unit
+sudo cp -r /arch_install/files/systemd/backup_private_files.service /etc/systemd/system/
+sudo cp -r /arch_install/files/systemd/backup_private_files.timer /etc/systemd/system/
+sudo systemctl enable --now backup_private_files.timer
 
 printf "\e[1;32m Left Firefox, thunderbird, skype, zoom, discord, telegram\e[0m"
+printf "\e[1;32m Use restore_private\e[0m"
