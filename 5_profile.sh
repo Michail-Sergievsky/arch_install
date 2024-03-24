@@ -18,9 +18,9 @@ mkdir -p $HOME/Downloads/{t_done,t_work,comics}
 mkdir -p $HOME/Git
 mkdir -p $HOME/Media
 mkdir -p $HOME/Pictures/{Wall_use,screenshots,IMAGES_COPIED,IMAGES_SELECTED}
-mkdir -p $HOME/Soft
 mkdir -p $HOME/Stuff
 mkdir -p $HOME/Temp
+mkdir -p $HOME/.soft
 mkdir -p $HOME/.vim/undodir
 #vim setup
 vim +PlugUpgrade +PlugUpdate +helptags ALL +qall
