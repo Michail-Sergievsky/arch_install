@@ -15,7 +15,8 @@ config config status.showUntrackedFiles no
 # HOME dirs
 # xdg-user-dirs-update
 mkdir -p $HOME/Downloads/{t_done,t_work,comics}
-mkdir -p $HOME/Git
+mkdir -p $HOME/Git_smy
+mkdir -p $HOME/Git_work
 mkdir -p $HOME/Media
 mkdir -p $HOME/Pictures/{Wall_use,screenshots,IMAGES_COPIED,IMAGES_SELECTED}
 mkdir -p $HOME/Stuff
@@ -39,5 +40,5 @@ sudo ln -s /run/media/"$user" ~/Mounted
 config config user.email "mikhail.sergiev@gmail.com"
 config config user.name "Michail-Sergievsky"
 # this won't work without public key uploaded to github - REPEAT later!
-config remote set-url origin git@github.com:Michail-Sergievsky/dotfiles.git
-config push --set-upstream origin main
+# config remote set-url origin git@github.com:Michail-Sergievsky/dotfiles.git
+# config push --set-upstream origin main
