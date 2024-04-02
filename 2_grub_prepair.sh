@@ -21,9 +21,9 @@ usermod --password $(openssl passwd password) root
 # echo root:password | chpasswd
 
 #update pacman
-pacman -Sy
+sudo pacman -Sy
 #uefi
-pacman -S --noconfirm grub efibootmgr efivar
+sudo pacman -S --noconfirm grub efibootmgr efivar
 #mbr
 # pacman -S grub
 

@@ -14,8 +14,8 @@ sudo cp -r /arch_install/files/xdg/reflector/reflector.conf /etc/xdg/reflector/
 sudo cp -r files/pwrstatd.conf /etc/
 
 #generate passkey
-user=$(echo $HOME | awk -F'/' '{print $3}')
-ssh-keygen -b 2048 -t rsa -f /home/"$user"/.ssh/sshkey -q -N ""
+# user=$(echo $HOME | awk -F'/' '{print $3}')
+# ssh-keygen -b 2048 -t rsa -f /home/"$user"/.ssh/sshkey -q -N ""
 
 # move pacman hooks
 sudo mkdir -p /etc/pacman.d/hooks/
