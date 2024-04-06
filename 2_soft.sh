@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Connect to  wife if needed!!!
 sudo timedatectl set-timezone Europe/Moscow
 sudo timedatectl set-ntp true
 
