@@ -49,6 +49,7 @@ sudo cp -rf $HOME/Backup/Host/etc/NetworkManager/system-connections/* /etc/Netwo
 cp -rf $HOME/Backup/Host/.ssh/* $HOME/.ssh/ 
 cp -rf $HOME/Backup/Host/.cert/ $HOME/.cert/ 
 cp -rf $HOME/Backup/Host/.env_priv $HOME/
+sudo nmcli general reload
 
 #copy backup_private_files unit
 mkdir -p $HOME/.config/systemd/user

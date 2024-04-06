@@ -1,4 +1,7 @@
 #!/bin/bash
+sudo timedatectl set-timezone Europe/Moscow
+sudo timedatectl set-ntp true
+
 sudo pacman -S --needed --noconfirm reflector 
 reflector -c Russia -a 7 --sort rate --save /etc/pacman.d/mirrorlist
 # echo $(grep "pacman soft" 5_soft.sh -A1 | tail -1)
