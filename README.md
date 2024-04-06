@@ -19,8 +19,11 @@ arch-chroot /mnt
 9. Download the git repository with
 
 git clone https://github.com/Michail-Sergievsky/arch_install.git
+
 cd arch-install
+
 chmod +x xxxx.sh
+
 run with ./xxxx.sh
 
 EDIT before executing!
