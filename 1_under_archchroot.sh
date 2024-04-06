@@ -5,7 +5,6 @@ sed -i 's:^#\[multilib\]$:\[multilib\]:' /etc/pacman.conf
 sed -i '' -e '/^\[multilib\]$/ {' -e 'n; s/.*/Include = \/etc\/pacman.d\/mirrorlist/' -e '}' /etc/pacman.conf 
 #enable parallel downloads
 sed -i 's:#ParallelDownloads:ParallelDownloads:' /etc/pacman.conf
-less /etc/pacman.conf
 
 #Swapfile
 touch /swapfile
@@ -48,7 +47,6 @@ sudo pacman -S --noconfirm grub efibootmgr efivar
 # edit /etc/default/grub
 sed -i 's:^GRUB_TIMEOUT=.:GRUB_TIMEOUT=2:' /etc/default/grub
 sed -i 's:^GRUB_CMDLINE_LINUX_DEFAULT="loglevel=.":GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7":' /etc/default/grub
-less /etc/default/grub
 
 # GRUB
 # uefi
@@ -105,5 +103,6 @@ usermod -aG "${GROUP}" "${USER}"
 echo "%${USER} ALL=(ALL) NOPASSWD: ALL" > "/etc/sudoers.d/${USER}"
 chown -R $USER:$USER /arch_install
 
+printf "\e[1;32m CHECK pacman.conf & grub!!!\e[0m"
 printf "\e[1;32m NOW LOGOUT FROM CHROOT, reboot and continue as USER\e[0m"
 

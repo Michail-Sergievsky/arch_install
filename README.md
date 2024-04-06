@@ -28,6 +28,9 @@ run with ./xxxx.sh
 
 EDIT before executing!
 
+Execute this way to have logs
+./script.sh 2>&1 | tee output.log
+
 1_under_archchroot.sh - locale, time, grub install, creating user
 
 2_soft.sh - installing soft
