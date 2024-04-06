@@ -1,12 +1,15 @@
 #!/bin/bash
 
 perform_backup() {
-    mkdir -p /home/freeman/Backup/MPC/etc /home/freeman/Backup/MPC/etc/wireguard /home/freeman/Backup/MPC/.ssh && \
-    cp -rf /etc/wireguard/wg-pc-client.conf /home/freeman/Backup/MPC/etc/wireguard && \ 
-    cp -rf /etc/hosts /etc/fstab /home/freeman/Backup/MPC/etc && \
-    cp -rf /home/freeman/.ssh/* /home/freeman/Backup/MPC/.ssh/ && \
-	cp -rf /home/freeman/.env_priv /home/freeman/Backup/MPC && \
-    chown freeman:freeman -R /home/freeman/Backup/MPC/
+    mkdir -p /home/tempuser/Backup/Host/etc /home/tempuser/Backup/Host/etc/wireguard /home/tempuser/Backup/Host/.ssh && \
+    mkdir -p /home/tempuser/Backup/Host/etc/NetworkManager/system-connections && \
+    mkdir -p /home/tempuser/Backup/Host/.scripts/ && \
+    cp -rf /etc/hosts /etc/fstab /home/tempuser/Backup/Host/etc && \
+    cp -rf /etc/NetworkManager/system-connections/* /home/tempuser/Backup/Host/etc/NetworkManager/system-connections/ && \
+    cp -rf /home/tempuser/.ssh/* /home/tempuser/Backup/Host/.ssh/ && \
+    cp -rf /home/tempuser/.cert/* /home/tempuser/Backup/Host/.cert/ && \
+	cp -rf /home/tempuser/.env_priv /home/tempuser/Backup/Host && \
+    chown tempuser:tempuser -R /home/tempuser/Backup/Host/
 }
 
 perform_backup

@@ -3,4 +3,4 @@ Description=Backup important configuration files
 
 [Service]
 Type=oneshot
-ExecStart=/home/freeman/.scripts/backup_private_files.sh
+ExecStart=/home/tempuser/.scripts/backup_private_files.sh
