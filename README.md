@@ -30,8 +30,6 @@ EDIT before executing!
 
 First two execute under archroot, last part after reboot under new user.
 
-Execute this way to have logs
-./script.sh | tee script.log
 
 1_archchroot_before_grub_install.sh - pacman setup, locale, time, hosts, hostname
 
@@ -51,3 +49,4 @@ Execute this way to have logs
 1. lscpu or something to choose intel-ucode or amd-ucode
 2. Something to choose video drivers
 3. Check for arch_install dir
+4. ./script.sh | tee script.log - test more

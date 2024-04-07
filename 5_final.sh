@@ -28,7 +28,7 @@ sudo cp -rf $HOME/Backup/Host/etc/hosts /etc/
 # sudo cp -rf $HOME/Backup/Host/et/fstab /etc/
 sudo cp -rf $HOME/Backup/Host/etc/NetworkManager/system-connections/* /etc/NetworkManager/system-connections/ 
 cp -rf $HOME/Backup/Host/.ssh/* $HOME/.ssh/ 
-cp -rf $HOME/Backup/Host/.cert/ $HOME/.cert/ 
+cp -rf $HOME/Backup/Host/.cert/* $HOME/.cert/ 
 cp -rf $HOME/Backup/Host/.env_priv $HOME/
 sudo nmcli conn reload
 
@@ -40,7 +40,7 @@ sed -i 's/tempuser/'"${USER}"'/g' $HOME/.scripts/backup_private_files.sh
 sudo cp -r /arch_install/files/systemd/backup_private_files.service /etc/systemd/system/
 sudo cp -r /arch_install/files/systemd/backup_private_files.timer /etc/systemd/system/
 chmod u+x $HOME/.scripts/* $HOME/.scripts/*/* 
-systemctl enable --user --now backup_private_files.timer
+systemctl enable --now backup_private_files.timer
 
 # final setup for bare git dotfiles, won't work without public key!
 config remote set-url origin git@github.com:Michail-Sergievsky/dotfiles.git
