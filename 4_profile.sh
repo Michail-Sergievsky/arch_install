@@ -1,6 +1,10 @@
 #!/bin/bash
 # Copy dotfiles
-# LAUNCH FROM USERNAME $HOME!!!!
+# LAUNCH FROM $HOME!!!!
+if [ "$PWD" != "$HOME" ]; then
+    echo "This script must be run from your home directory ($HOME). Exiting."
+    exit 1
+fi
 
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.bash_profile
@@ -17,11 +21,9 @@ config config user.name "Michail-Sergievsky"
 # HOME dirs
 # xdg-user-dirs-update
 mkdir -p $HOME/Downloads/{t_done,t_work,comics}
-mkdir -p $HOME/Git_smy
-mkdir -p $HOME/Git_work
 mkdir -p $HOME/Media
 mkdir -p $HOME/Pictures/{Wall_use,screenshots,IMAGES_COPIED,IMAGES_SELECTED}
-mkdir -p $HOME/Stuff
+mkdir -p $HOME/Phone
 mkdir -p $HOME/Temp
 mkdir -p $HOME/.soft
 mkdir -p $HOME/.vim/undodir

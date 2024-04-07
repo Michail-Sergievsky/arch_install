@@ -28,16 +28,24 @@ run with ./xxxx.sh
 
 EDIT before executing!
 
+First two execute under archroot, last part after reboot under new user.
+
 Execute this way to have logs
-./script.sh 2>&1 | tee output.log
+./script.sh | tee script.log
 
-1_under_archchroot.sh - locale, time, grub install, creating user
+1_archchroot_before_grub_install.sh - pacman setup, locale, time, hosts, hostname
 
-2_soft.sh - installing soft
+2_archroot_grub_install.sh - grub, user, video , network drivers
 
-3_profile.sh - copying dotfiles and creating home directories
+3_soft.sh - installing soft
 
-4_final.sh - hooks, restoring private files and diffrent other things
+4_profile.sh - copying dotfiles and creating user directories
+
+5_final.sh - hooks, restoring files and diffrent other things
+    Copy Backup from flash drive!
+    cp -r /path/to/source_directory/* /path/to/destination_directory
+    cp -r /path/to/source_directory/. /path/to/destination_directory
+        for hidden
 
 # TODO
 1. lscpu or something to choose intel-ucode or amd-ucode

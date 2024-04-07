@@ -5,6 +5,7 @@ perform_backup() {
     mkdir -p /home/tempuser/Backup/Host/etc/NetworkManager/system-connections && \
     mkdir -p /home/tempuser/Backup/Host/.scripts/ && \
     cp -rf /etc/hosts /etc/fstab /home/tempuser/Backup/Host/etc && \
+    cp -rf /etc/wireguard/* /home/tempuser/Backup/Host/etc/wireguard/ && \
     cp -rf /etc/NetworkManager/system-connections/* /home/tempuser/Backup/Host/etc/NetworkManager/system-connections/ && \
     cp -rf /home/tempuser/.ssh/* /home/tempuser/Backup/Host/.ssh/ && \
     cp -rf /home/tempuser/.cert/* /home/tempuser/Backup/Host/.cert/ && \
