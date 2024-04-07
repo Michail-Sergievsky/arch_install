@@ -37,8 +37,8 @@ mkdir -p $HOME/.config/systemd/user
 sed -i 's/tempuser/'"${USER}"'/g' /arch_install/files/systemd/backup_private_files.service
 cp -r /arch_install/files/systemd/backup_private_files.sh $HOME/.scripts/
 sed -i 's/tempuser/'"${USER}"'/g' $HOME/.scripts/backup_private_files.sh 
-sudo cp -r /arch_install/files/systemd/backup_private_files.service $HOME/etc/systemd/system/
-sudo cp -r /arch_install/files/systemd/backup_private_files.timer $HOME/etc/systemd/system/
+sudo cp -r /arch_install/files/systemd/backup_private_files.service /etc/systemd/system/
+sudo cp -r /arch_install/files/systemd/backup_private_files.timer /etc/systemd/system/
 chmod u+x $HOME/.scripts/* $HOME/.scripts/*/* 
 systemctl enable --user --now backup_private_files.timer
 
@@ -79,5 +79,5 @@ sudo mkdir -p /etc/pacman.d/hooks/
 sudo cp -r /arch_install/files/pacman-cache-cleanup.hook /etc/pacman.d/hooks/
 
 # adding to groups
-usermod -aG docker $USER
-usermod -aG wireshark $USER
+sudo usermod -aG docker $USER
+sudo usermod -aG wireshark $USER
