@@ -3,7 +3,7 @@
 perform_backup() {
     mkdir -p /home/tempuser/Backup/Host/etc /home/tempuser/Backup/Host/etc/wireguard /home/tempuser/Backup/Host/.ssh && \
     mkdir -p /home/tempuser/Backup/Host/etc/NetworkManager/system-connections && \
-    mkdir -p /home/tempuser/Backup/Host/.scripts/ && \
+    mkdir -p /home/tempuser/Backup/Host/.cert/ && \
     cp -rf /etc/hosts /etc/fstab /home/tempuser/Backup/Host/etc && \
     cp -rf /etc/wireguard/* /home/tempuser/Backup/Host/etc/wireguard/ && \
     cp -rf /etc/NetworkManager/system-connections/* /home/tempuser/Backup/Host/etc/NetworkManager/system-connections/ && \
