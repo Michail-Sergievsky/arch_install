@@ -59,7 +59,6 @@ yay -S powerpanel
 
 sudo pkgfile -u
 
-systemctl --user enable --now greenclip.service
 sudo systemctl enable --now cups.service
 sudo systemctl enable --now sshd
 sudo systemctl enable --now avahi-daemon
