@@ -25,6 +25,7 @@ find ~/Backup/Host/ -type f -exec chmod 600 '{}' \;
 mkdir $HOME/.cert
 mkdir $HOME/.ssh
 sudo cp -rf $HOME/Backup/Host/etc/hosts /etc/
+sudo cp -rf $HOME/Backup/Host/root/* /root/
 # sudo cp -rf $HOME/Backup/Host/et/fstab /etc/
 sudo cp -rf $HOME/Backup/Host/etc/NetworkManager/system-connections/* /etc/NetworkManager/system-connections/ 
 cp -rf $HOME/Backup/Host/.ssh/* $HOME/.ssh/ 
