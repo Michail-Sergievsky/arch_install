@@ -36,6 +36,7 @@ First two execute under archroot, last part after reboot under new user.
 2_archroot_grub_install.sh - grub, user, video , network drivers
 
 3_soft.sh - installing soft
+   launch not from / !
 
 4_profile.sh - copying dotfiles and creating user directories
 
