@@ -21,6 +21,7 @@ config config user.name "Michail-Sergievsky"
 # HOME dirs
 # xdg-user-dirs-update
 mkdir -p $HOME/Downloads/{t_done,t_work,comics}
+mkdir -p $HOME/GoogleDrive
 mkdir -p $HOME/Media
 mkdir -p $HOME/Pictures/{Wall_use,screenshots,IMAGES_COPIED,IMAGES_SELECTED}
 mkdir -p $HOME/Phone

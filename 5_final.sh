@@ -1,4 +1,5 @@
 #!/bin/bash
+# Backup must be put in Backup/Host
 # LAUNCH FROM USERNAME $HOME!!!!
 
 # Check if the Backup directory exists
@@ -30,10 +31,21 @@ sudo cp -rf $HOME/Backup/Host/root/* /root/
 sudo cp -rf $HOME/Backup/Host/etc/NetworkManager/system-connections/* /etc/NetworkManager/system-connections/ 
 cp -rf $HOME/Backup/Host/.ssh/* $HOME/.ssh/ 
 cp -rf $HOME/Backup/Host/.cert/* $HOME/.cert/ 
+cp -rf $HOME/Backup/Host/.scripts/* $HOME/.scripts/ 
+cp -rf $HOME/Backup/Host/.config/* $HOME/.config/ 
 cp -rf $HOME/Backup/Host/.env_priv $HOME/
+
 sudo nmcli conn reload
 
 #copy backup_private_files unit
+mkdir -p $HOME/.config/systemd/user
+sed -i 's/tempuser/'"${USER}"'/g' /arch_install/files/systemd/backup_private_files.service
+sudo cp -r /arch_install/files/systemd/backup_private_files.service /etc/systemd/system/
+sudo cp -r /arch_install/files/systemd/backup_private_files.timer /etc/systemd/system/
+chmod u+x $HOME/.scripts/* $HOME/.scripts/*/* 
+systemctl enable --now backup_private_files.timer
+
+#copy user unit
 mkdir -p $HOME/.config/systemd/user
 sed -i 's/tempuser/'"${USER}"'/g' /arch_install/files/systemd/backup_private_files.service
 cp -r /arch_install/files/systemd/backup_private_files.sh $HOME/.scripts/
@@ -82,3 +94,8 @@ sudo cp -r /arch_install/files/pacman-cache-cleanup.hook /etc/pacman.d/hooks/
 # adding to groups
 sudo usermod -aG docker $USER
 sudo usermod -aG wireshark $USER
+
+#GOOGLEDRIVE
+rclone bisync ~/GoogleDrive gdrive: --resync
+systemctl --user daemon-reload
+systemctl --user enable --now rclone-sync.timer
