@@ -30,6 +30,7 @@ sudo cp -rf $HOME/Backup/Host/root/* /root/
 # sudo cp -rf $HOME/Backup/Host/et/fstab /etc/
 sudo cp -rf $HOME/Backup/Host/etc/NetworkManager/system-connections/* /etc/NetworkManager/system-connections/ 
 cp -rf $HOME/Backup/Host/.ssh/* $HOME/.ssh/ 
+chmod 600 $HOME/.ssh/* -R
 cp -rf $HOME/Backup/Host/.cert/* $HOME/.cert/ 
 cp -rf $HOME/Backup/Host/.scripts/* $HOME/.scripts/ 
 cp -rf $HOME/Backup/Host/.config/* $HOME/.config/ 
@@ -43,17 +44,8 @@ sed -i 's/tempuser/'"${USER}"'/g' /arch_install/files/systemd/backup_private_fil
 sudo cp -r /arch_install/files/systemd/backup_private_files.service /etc/systemd/system/
 sudo cp -r /arch_install/files/systemd/backup_private_files.timer /etc/systemd/system/
 chmod u+x $HOME/.scripts/* $HOME/.scripts/*/* 
-systemctl enable --now backup_private_files.timer
-
-#copy user unit
-mkdir -p $HOME/.config/systemd/user
-sed -i 's/tempuser/'"${USER}"'/g' /arch_install/files/systemd/backup_private_files.service
-cp -r /arch_install/files/systemd/backup_private_files.sh $HOME/.scripts/
-sed -i 's/tempuser/'"${USER}"'/g' $HOME/.scripts/backup_private_files.sh 
-sudo cp -r /arch_install/files/systemd/backup_private_files.service /etc/systemd/system/
-sudo cp -r /arch_install/files/systemd/backup_private_files.timer /etc/systemd/system/
-chmod u+x $HOME/.scripts/* $HOME/.scripts/*/* 
-systemctl enable --now backup_private_files.timer
+chmod u+x $HOME/.config/systemd/user/*.sh
+sudo systemctl enable --now backup_private_files.timer
 
 # final setup for bare git dotfiles, won't work without public key!
 config remote set-url origin git@github.com:Michail-Sergievsky/dotfiles.git
@@ -84,8 +76,8 @@ sudo cp -r /arch_install/files/skel/.bashrc /etc/skel
 # setup reflector weekly update
 sudo cp -r /arch_install/files/xdg/reflector/reflector.conf /etc/xdg/reflector/
 
-#optional copy config for UPS
-sudo cp -r /arch_install/files/pwrstatd.conf /etc/
+# OPTIONAL COPY CONFIG FOR UPS
+#sudo cp -r /arch_install/files/pwrstatd.conf /etc/
 
 # move pacman hooks
 sudo mkdir -p /etc/pacman.d/hooks/

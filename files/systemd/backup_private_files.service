@@ -1,6 +1,0 @@
-[Unit]
-Description=Backup important configuration files
-
-[Service]
-Type=oneshot
-ExecStart=/home/tempuser/.scripts/backup_private_files.sh
