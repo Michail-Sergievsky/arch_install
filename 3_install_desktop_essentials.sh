@@ -26,7 +26,7 @@ echo "==> updating pacman"
 sudo pacman -Sy
 
 echo "==> Installing and configuring reflector..."
-sudo pacman -S --noconfirm reflector 
+sudo pacman -S --noconfirm reflector rsync
 sudo reflector -c Russia -a 7 --sort rate --save /etc/pacman.d/mirrorlist
 
 echo "==> Installing pacman packages for desktop_essentials"
@@ -37,6 +37,13 @@ for pkg in adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts alsa-u
         echo "$pkg" >> install_desktop_essentials-pacman-notfound.txt
     fi
 done
+
+# install yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ..
+rm -rf yay
 
 echo "==> Installing yay packages for desktop_essentials"
 for pkg in downgrade dropbox dumptorrent epub-thumbnailer-git fontpreview icons-in-terminal-git mcomix nerd-fonts-sf-mono nerd-fonts-source-code-pro pacman-cleanup-hook polybar rofi-blezz rofi-dmenu rofi-greenclip siji-git simple-mtpfs taskopen transgui-gtk ttf-weather-icons update-grub urxvt-resize-font-git; do
