@@ -83,9 +83,6 @@ sudo cp -r /arch_install/files/xdg/reflector/reflector.conf /etc/xdg/reflector/
 sudo mkdir -p /etc/pacman.d/hooks/
 sudo cp -r /arch_install/files/pacman-cache-cleanup.hook /etc/pacman.d/hooks/
 
-# adding to groups
-sudo usermod -aG docker $USER
-sudo usermod -aG wireshark $USER
 
 #GOOGLEDRIVE
 rclone bisync ~/GoogleDrive gdrive: --resync
