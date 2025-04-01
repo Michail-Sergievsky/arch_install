@@ -1,17 +1,25 @@
 #!/bin/bash
-# Backup must be put in Backup/Host
+# Backup must be put in $HOME/Backup/Hostname
 # LAUNCH FROM USERNAME $HOME!!!!
 
+# Check for internet connectivity
+if ping -c 4 8.8.8.8 &> /dev/null; then
+    echo "Continue"
+else
+    echo "CONNECT TO INTERNET!!!"
+    exit 1
+fi
+
+# EDIT HOSTNAME
+HOSTNAME=hostname
+
 # Check if the Backup directory exists
-if [ -d "$HOME/Backup" ]; then
+if [ -d "$HOME/Backup/$HOSTNAME" ]; then
     echo "Continuing with the script..."
 else
     echo "COPY BACKUP DIR!"
     exit 1
 fi
-
-# generate passkey if needed
-# ssh-keygen -t ed25519
 
 source ~/.bashrc
 source ~/.bash_aliases
@@ -21,20 +29,21 @@ function config {
 }
 
 #restore private stuff
-chown $USER:$USER -R $HOME/Backup/Host/
-find ~/Backup/Host/ -type f -exec chmod 600 '{}' \;
+chown $USER:$USER -R $HOME/Backup/$HOSTNAME/
+find ~/Backup/$HOSTNAME/ -type f -exec chmod 600 '{}' \;
 mkdir $HOME/.cert
 mkdir $HOME/.ssh
-sudo cp -rf $HOME/Backup/Host/etc/hosts /etc/
-sudo cp -rf $HOME/Backup/Host/root/* /root/
-# sudo cp -rf $HOME/Backup/Host/et/fstab /etc/
-sudo cp -rf $HOME/Backup/Host/etc/NetworkManager/system-connections/* /etc/NetworkManager/system-connections/ 
-cp -rf $HOME/Backup/Host/.ssh/* $HOME/.ssh/ 
+sudo cp -rf $HOME/Backup/$HOSTNAME/etc/hosts /etc/
+sudo cp -rf $HOME/Backup/$HOSTNAME/root/* /root/
+# sudo cp -rf $HOME/Backup/$HOSTNAME/et/fstab /etc/
+sudo cp -rf $HOME/Backup/$HOSTNAME/etc/NetworkManager/system-connections/* /etc/NetworkManager/system-connections/ 
+sudo cp -rf $HOME/Backup/$HOSTNAME/etc/wireguard/* /etc/wireguard/ 
+cp -rf $HOME/Backup/$HOSTNAME/.ssh/* $HOME/.ssh/ 
 chmod 600 $HOME/.ssh/* -R
-cp -rf $HOME/Backup/Host/.cert/* $HOME/.cert/ 
-cp -rf $HOME/Backup/Host/.scripts/* $HOME/.scripts/ 
-cp -rf $HOME/Backup/Host/.config/* $HOME/.config/ 
-cp -rf $HOME/Backup/Host/.env_priv $HOME/
+cp -rf $HOME/Backup/$HOSTNAME/.cert/* $HOME/.cert/ 
+cp -rf $HOME/Backup/$HOSTNAME/.scripts/* $HOME/.scripts/ 
+cp -rf $HOME/Backup/$HOSTNAME/.config/* $HOME/.config/ 
+cp -rf $HOME/Backup/$HOSTNAME/.env_priv $HOME/
 
 sudo nmcli conn reload
 
@@ -82,7 +91,6 @@ sudo cp -r /arch_install/files/xdg/reflector/reflector.conf /etc/xdg/reflector/
 # move pacman hooks
 sudo mkdir -p /etc/pacman.d/hooks/
 sudo cp -r /arch_install/files/pacman-cache-cleanup.hook /etc/pacman.d/hooks/
-
 
 #GOOGLEDRIVE
 rclone bisync ~/GoogleDrive gdrive: --resync
