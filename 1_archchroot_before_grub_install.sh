@@ -28,7 +28,9 @@ locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 #<<<change hostname>>>
-HOST=hostname
+read -p "Enter hostname: " HOST
+echo "Using hostname: $HOST"
+
 echo "${HOST}" >> /etc/hostname
 #hosts
 echo "127.0.0.1 localhost" >> /etc/hosts

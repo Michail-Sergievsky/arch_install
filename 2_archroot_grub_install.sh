@@ -44,7 +44,8 @@ systemctl enable NetworkManager
 #systemctl enable tlp
 
 #<<<change username>>>
-USER=username
+read -p "Enter username: " USER
+echo "Using username: $USER"
 GROUP="${USER}"
 PASSWORD="${USER}"
 useradd -m -s /bin/bash "${USER}"
