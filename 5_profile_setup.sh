@@ -38,6 +38,7 @@ sudo cp -rf $HOME/Backup/$HOSTNAME/root/* /root/
 # sudo cp -rf $HOME/Backup/$HOSTNAME/et/fstab /etc/
 sudo cp -rf $HOME/Backup/$HOSTNAME/etc/NetworkManager/system-connections/* /etc/NetworkManager/system-connections/ 
 sudo cp -rf $HOME/Backup/$HOSTNAME/etc/wireguard/* /etc/wireguard/ 
+sudo cp -rf $HOME/Backup/$HOSTNAME/etc/systemd/system/*.service /etc/systemd/system/ 
 cp -rf $HOME/Backup/$HOSTNAME/.ssh/* $HOME/.ssh/ 
 chmod 600 $HOME/.ssh/* -R
 cp -rf $HOME/Backup/$HOSTNAME/.cert/* $HOME/.cert/ 
