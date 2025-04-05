@@ -34,7 +34,6 @@ mkdir -p $HOME/Media
 mkdir -p $HOME/Pictures/{Wall_use,screenshots,IMAGES_COPIED,IMAGES_SELECTED}
 mkdir -p $HOME/Phone
 mkdir -p $HOME/Temp
-mkdir -p $HOME/Videos
 mkdir -p $HOME/.soft
 mkdir -p $HOME/.cache/bash
 mkdir -p $HOME/.vim/undodir
