@@ -47,7 +47,5 @@ First two execute under archroot, last part after reboot under new user.
         for hidden
 
 # TODO
-1. lscpu or something to choose intel-ucode or amd-ucode
-2. Something to choose video drivers
-3. Check for arch_install dir
-4. ./script.sh | tee script.log - test more
+1. Check for arch_install dir
+2. ./script.sh | tee script.log - test more
