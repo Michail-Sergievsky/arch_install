@@ -61,7 +61,7 @@ echo "==> Installing NetworkManager and enabling service..."
 pacman -S --noconfirm networkmanager network-manager-applet dhclient
 systemctl enable NetworkManager
 
-if [[ -d /sys/class/power_supply/BAT0 ]]; then
+if ls /sys/class/power_supply/BAT* &>/dev/null; then
   echo "Notebook detected: installing bluez, bluez-utils, and tlp"
   pacman -S --noconfirm bluez bluez-utils tlp
   systemctl enable bluetooth
