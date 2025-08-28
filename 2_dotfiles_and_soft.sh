@@ -58,7 +58,8 @@ done
 sudo pkgfile -u
 
 echo "==> Enabling essential systemd services..."
-sudo systemctl enable --now cups.service sshd avahi-daemon reflector.timer reflector.service pkgfile-update.timer plocate-updatedb.timer fstrim.service fstrim.timer ly.service
+sudo systemctl enable --now cups.service sshd avahi-daemon reflector.timer reflector.service pkgfile-update.timer plocate-updatedb.timer fstrim.service fstrim.timer 
+sudo systemclt enable ly.service
 
 echo "==> Cleaning home directory and restoring dotfiles..."
 shopt -s dotglob
@@ -125,7 +126,7 @@ config remote set-url origin git@github.com:Michail-Sergievsky/dotfiles.git
 config push --set-upstream origin main
 
 echo "==> Finalizing Vim setup..."
-vim +PlugUpgrade +PlugUpdate +helptags ALL +qall
+vim -E -s +PlugUpgrade +PlugUpdate +helptags ALL +qall
 sudo cp -r $HOME/.vim /root/
 sudo mkdir -p /root/.config
 
