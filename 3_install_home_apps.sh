@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "==> Installing pacman packages for install_home_apps"
-for pkg in aegisub discord foliate gimagereader-gtk gimp handbrake hunspell-en_us hyphen-en kdenlive languagetool obs-studio tenacity tesseract tesseract-data-eng tesseract-data-rus thunderbird sox opus-tools mac; do
+for pkg in aegisub discord foliate gimagereader-gtk gimp handbrake hunspell-en_us hyphen-en kdenlive languagetool obs-studio tenacity tesseract tesseract-data-eng tesseract-data-rus thunderbird sox opus-tools mac dosfstools; do
     if pacman -Si "$pkg" > /dev/null 2>&1; then
         sudo pacman -S --noconfirm --needed "$pkg"
     else
