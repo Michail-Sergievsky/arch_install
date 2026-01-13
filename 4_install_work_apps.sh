@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "==> Installing pacman packages for work"
-for pkg in vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch docker docker-compose ansible wireshark-cli wireshark-qt freerdp virt-manager python-psycopg2; do
+for pkg in vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch docker docker-compose ansible wireshark-cli wireshark-qt freerdp virt-manager python-psycopg2 openfortivpn; do
     if pacman -Si "$pkg" > /dev/null 2>&1; then
         sudo pacman -S --noconfirm --needed "$pkg"
     else
@@ -9,7 +9,7 @@ for pkg in vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch 
 done
 
 echo "==> Installing yay packages for work"
-for pkg in kesl kesl-gui remmina rocketchat-client-bin; do
+for pkg in kesl kesl-gui remmina rocketchat-client-bin networkmanager-fortisslvpn; do
     if yay -Si "$pkg" > /dev/null 2>&1 || yay -A --print "$pkg" > /dev/null 2>&1; then
         yay -S --noconfirm --needed "$pkg"
     else
