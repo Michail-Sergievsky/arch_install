@@ -8,6 +8,21 @@ for pkg in vagrant virtualbox virtualbox-guest-iso virtualbox-host-modules-arch 
     fi
 done
 
+echo "==> Installing pandoc + LaTeX toolchain"
+for pkg in pandoc texlive-basic texlive-latexextra texlive-xetex texlive-fontsrecommended noto-fonts noto-fonts-cjk noto-fonts-emoji; do
+    if pacman -Si "$pkg" > /dev/null 2>&1; then
+        sudo pacman -S --noconfirm --needed "$pkg"
+    else
+        echo "$pkg" >> install_pandoc_latex-notfound.txt
+    fi
+done
+
+echo "==> Building LaTeX formats (xelatex.fmt etc.)"
+sudo fmtutil-sys --all
+
+echo "==> Updating font cache"
+fc-cache -f -v
+
 echo "==> Installing yay packages for work"
 for pkg in kesl kesl-gui remmina rocketchat-client-bin networkmanager-fortisslvpn; do
     if yay -Si "$pkg" > /dev/null 2>&1 || yay -A --print "$pkg" > /dev/null 2>&1; then
